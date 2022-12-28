@@ -231,8 +231,10 @@ function love.update(dt)
 
     --
     -- paddles can move no matter what state we're in
-    -- This is the original code, commented out. 
+
     -- player 1
+
+    -- ORIGINAL CODE commented out. 
     -- if love.keyboard.isDown('w') then
     --     player1.dy = -PADDLE_SPEED
     -- elseif love.keyboard.isDown('s') then
@@ -241,6 +243,7 @@ function love.update(dt)
     --     player1.dy = 0
     -- end
 
+    -- This automates player 1's paddle.
     if player1.y > ball.y then 
         player1.dy = -PADDLE_SPEED
     elseif player1.y < ball.y then
@@ -249,15 +252,21 @@ function love.update(dt)
         player1.dy = 0
     end
 
-    -- if ball.y > paddle1.y then
-    --     player1.dy = PADDLE_SPEED
-    -- else
-    --     player1.dy = -PADDLE_SPEED
-
     -- player 2
-    if love.keyboard.isDown('up') then
+
+    -- ORIGINAL CODE commented out. 
+    -- if love.keyboard.isDown('up') then
+    --     player2.dy = -PADDLE_SPEED
+    -- elseif love.keyboard.isDown('down') then
+    --     player2.dy = PADDLE_SPEED
+    -- else
+    --     player2.dy = 0
+    -- end
+
+    -- This automates player 2's paddle.
+    if player2.y > ball.y then 
         player2.dy = -PADDLE_SPEED
-    elseif love.keyboard.isDown('down') then
+    elseif player2.y < ball.y then
         player2.dy = PADDLE_SPEED
     else
         player2.dy = 0
